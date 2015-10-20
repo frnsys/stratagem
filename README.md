@@ -78,3 +78,139 @@ Possible card effects:
 - Buff unit
 - Debuff unit
 - Temporary resources
+
+
+---
+
+### Ferris' Idea
+
+TODO: Complete writing
+TODO: Probably needs balancing
+
+### Materials
+
+*Required* = 
+
+- 52-card playing deck
+- Sheet of paper + Pencil
+
+*Misc* =
+
+- 20-sided die
+- a 6-sided die for each player
+
+### Rules
+
+#### Resource Rules
+
+Each card in the deck can be played at any time to add X of that card's suit into 
+your resource pool (e.g. 5 of diamonds will add 5 diamonds to your resource pool).
+Face cards have the following values:
+  
+```
+  Ace = 1
+  Jack = 11
+  Queen = 12
+  King = 13
+  Joker = 1 of any suit
+```
+
+The total amount of all resources in your resource pool cannot exceed the value of 
+the global resource counter. The global resource counter starts at 1 
+(meaning at any time, each player can only have 1 of a any resource in their pool
+at any given time). The global resource counter ticks up by Y (usually 1) on 
+each player's turn. If Player 1 goes first, the global resource counter starts 
+at 1. Then on Player 2's turn, the global resource counter ticks up to 2.
+
+If you expend a resource card that exceeds the value of the global resource counter,
+then you add the difference between the maximum allowed amount of any given resource,
+and the current amount in your pool. For example, if the GRC is at 5, and you 
+have 1 club, and you play a 5 of hearts, you will end up with 1 club and 4 hearts 
+in your resource pool. 
+
+#### Creating Spells
+
+Resources are expended to buy abilities from the store. All abilities modify 
+properties of spells / permanents. The phase of the turn determines which 
+types of spells you can create. When you create a spell, you are also 
+casting it. The types you can create are:
+
+```
+  Instant
+  Sorcery
+  Enchantment
+  Creature 
+```
+
+The cost to create a spell of each type:
+
+```
+  Sorcery  = (1)
+  Instant  = (2)
+  Enchant. = (3)
+  Creature = (3)
+```
+
+#### Increasing the number of resource cards you can play per turn
+
+To start, each player can only play 1 resource card a turn. They can increase 
+the number of cards they can play but spending (2) + (X - 1) where X = number of 
+resource cards that player can play currently. 
+
+```
+  Upgrade costs:
+
+
+    Current | Next
+    --------|------
+    1       | (2)
+    2       | (3)
+    3       | (4)
+    4       | (5)
+    X       | (2) + (X - 1)
+```
+
+#### Misc. Rules
+
+The other rules (tapping, stack, combat, how damage works, when you can play cards of 
+certain types, etc.) work like MTG, except the resources you have empty out 
+at the end of your turn (instead at the end of each phase like in MTG).
+
+There are no graveyards.
+
+### How to play
+
+Each player starts with 5 cards, and the global resource counter starts at 1. 
+The game works like MTG, except each player draws from the shared stack. As 
+resources are expended they are placed in the discard pile. Used up cards are 
+simply removed from the game. If the center pile runs out of cards, shuffle the 
+discarded pile, and use that as the new deck. 
+
+### Sample Shop
+
+(C)lub = cleverness, (D)iamond = greed, (S)pade = power, (H)eart = life
+
+```
+Key
+  - (XXX): ABILITY = Activated ability
+  - (REC)          = Recurring ability at beginning of your turn 
+  - EOT            = End of turn
+```
+
+| Cost | Creature  | Enchantment                                       | Instant                                           | Sorcery          
+|:----:|:--------- |:------------------------------------------------- |:------------------------------------------------- | :-------------------------------------------------
+|  C   | +0/+1     | (REC) Target creature gains unblockable until EOT | Tap creature                                      | 
+|  D   | +2/-1     | (REC) Add 1 resource of any type.                 | Add 1 resource of any type. Lose 1 life           | Draw a card, then discard.
+|      | -1/+2     |                                                   |                                                   |
+|  S   | +1/0      |                                                   | Prevent 3 dmg                                     | Gain 5 Life
+|  H   | +1/0      | (REC) Deal 1 dmg                                  | Deal 2 dmg                                        | Deal 3 dmg       
+|      | 0/+1      |                                                   |                                                   | Haste            
+|      |           |                                                   |                                                   | +3/+3            
+| SSS  |           |                                                   |                                                   | Destroy creature 
+| CCC  |           |                                                   | Counter spell                                     |                 
+| HHH  |           |                                                   | Destroy ench.                                     |                 
+| DDD  |           | (D): Lose 2, Draw 1                               |
+
+### Other ideas
+
+???
